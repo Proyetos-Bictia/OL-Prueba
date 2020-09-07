@@ -1,0 +1,51 @@
+<section class="main">
+  <div class="container_app">
+    <div class="container_app-left">
+      <h1>Aplicación <br>OLSoftware</h1>
+      <p>Prueba práctica Front-end senior</p>
+    </div>
+    <div class="container_app-right">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="mb-4">Inicio de sesión</h2>
+            <form
+              [formGroup]="loginForm"
+              (ngSubmit)="save()"
+            >
+              <div class="form-group">
+                <div class="container_input">
+                  <input 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Usuario"
+                    formControlName="email"  
+                  >
+                  <div class="container_icon">
+                    <i class="far fa-user"></i>
+                  </div>
+                </div>
+                <div class="container_input mb-4">
+                  <input 
+                    type="password" 
+                    class="form-control" 
+                    placeholder="Contraseña"
+                    formControlName="password"  
+                  >
+                  <div class="container_icon">
+                    <i class="fas fa-lock"></i>
+                  </div>
+                </div>
+                  <button 
+                    class="btn btn-primary btn-block"
+                    type="submit"
+                    [disabled]="loginForm.invalid"
+                  >
+                    Iniciar sesión
+                  </button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,56 @@
+.container-fluid {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: auto 280px;
+    grid-gap: 10px;
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+}
+
+.container-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-top_left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2343ad;
+}
+
+.container-top_left i{
+    font-size: 20px;
+    color: #2343ad;
+}
+
+h3 {
+    font-size: 18px;
+    color: #2343ad;
+}
+
+.btn-primary {
+    padding: 5px 30px;
+    background-color: #2343ad;
+}
+
+.container-left {
+    max-width: 100%;
+}
+
+.container-table {
+    margin-top: 20px;
+    width: calc(100vw - 300px - 280px - 95px );
+    height: 85%;
+    overflow-x: auto;
+}
+
+.hiddenSideBar {
+    width: calc(100vw - 100px - 280px - 95px );
+}

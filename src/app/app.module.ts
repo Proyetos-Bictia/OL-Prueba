@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from "./shared/shared.module";
 
 // NgRx
@@ -15,16 +16,17 @@ import { AppComponent } from "./app.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     StoreModule.forRoot(appReducer),
+    HttpClientModule,
     StoreDevtoolsModule.instrument({
-      maxAge: 25, // Retains last 25 states
-      logOnly: environment.production, // Restrict extension to log-only mode
+      maxAge: 25,
+      logOnly: environment.production,
     }),
   ],
   providers: [],

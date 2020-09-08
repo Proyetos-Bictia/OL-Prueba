@@ -1,0 +1,25 @@
+<div class="container-main">
+  <div 
+    class="container-top"
+    [class.centrar]="!isDeploy"
+  >
+    <div class="ballon"></div>
+    <h3 *ngIf="isDeploy">OLSoftware</h3>
+  </div>
+  <hr>
+  <div
+    class="container-item selector mb-3"
+    *ngFor="let item of metaData"
+    [class.centrar]="!isDeploy"
+  >
+      <div style="width: 30px; text-align: center;">
+        <i [class]="item.icono"></i>
+      </div>
+      <p 
+        *ngIf="isDeploy"
+        class="pl-4"  
+      >
+          {{item.titulo}}
+      </p>
+  </div>
+</div>

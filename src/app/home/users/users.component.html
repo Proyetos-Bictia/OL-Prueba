@@ -1,0 +1,33 @@
+<div 
+  class="container-fluid"
+>
+
+  <div class="container-left">
+    <div class="card">
+      <div class="card-body">
+        <div class="container-top">
+          <div class="container-top_left">
+            <i class="fas fa-users"></i>
+            <h3 class="ml-4">Usuarios exitentes</h3>
+          </div>
+          <div class="container-top_right">
+            <button class="btn btn-primary">
+              Crear
+            </button>
+          </div>
+        </div>
+
+        <div 
+          class="container-table"
+          [class.hiddenSideBar]="!isDeploy"  
+        >
+        <app-table></app-table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-right">
+    <app-search></app-search>
+  </div>
+</div>

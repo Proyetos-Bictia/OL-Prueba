@@ -16,3 +16,19 @@ i {
     color: rgb(70, 70, 70);
     font-size: 14px;
 }
+
+.container-main {
+    width: 100%;
+}
+
+.selector {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}

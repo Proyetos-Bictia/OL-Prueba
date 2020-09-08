@@ -36,11 +36,21 @@ export class SearchComponent implements OnInit {
 
   filtrar() {
     this.store.dispatch(searchAction.setSearch({ client: this.searchForm.value }))
-    console.log(this.searchForm.value)
+    // console.log(this.searchForm.value)
   }
 
   resetForm() {
-    this.searchForm.reset();
+    // this.searchForm.get('name').setValue('')
+    // this.searchForm.get('name').setValue('')
+    const initialState = {
+      name: '',
+      lastName: '',
+      document: '',
+      rol: '',
+      state: null,
+      email: ''
+    }
+    this.searchForm.reset(initialState)
     this.store.dispatch(searchAction.clearSearch())
   }
 

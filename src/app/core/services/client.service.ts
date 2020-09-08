@@ -28,4 +28,12 @@ export class ClientService {
       map((resp: any) => resp.message as Client)
     )
   }
+
+  editClient(id, client: Partial<Client>) {
+    const url = `${this.baseUrl}/data/${id}`
+    return this.http.patch(url, client).pipe(
+      map((resp: any) => resp.message as Client)
+    )
+  }
+
 }

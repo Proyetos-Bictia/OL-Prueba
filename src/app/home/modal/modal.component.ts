@@ -8,6 +8,7 @@ import * as clientActions from "../client.action";
 import * as uiActions from "../../shared/ui.actions";
 
 import { ClientService } from 'src/app/core/services/client.service';
+import { Client } from 'src/app/models/client.model';
 
 @Component({
   selector: 'app-modal',
@@ -19,6 +20,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   clientForm: FormGroup
   clientSelectedSubscription: Subscription
   isThereClient: boolean = false
+  currentClient: Client = null
 
   constructor(private fb: FormBuilder,
     private store: Store<AppState>,
@@ -33,6 +35,7 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.formBuilder()
     this.clientSelectedSubscription = this.store.select('clients').subscribe(({ clientSelected }) => {
       if (clientSelected) {
+        this.currentClient = clientSelected
         this.clientForm.patchValue(clientSelected)
         this.isThereClient = true
         this.placePassword.disable()
@@ -58,12 +61,15 @@ export class ModalComponent implements OnInit, OnDestroy {
   save() {
     this.clientService.createClient(this.clientForm.value).subscribe((client) => {
       this.store.dispatch(clientActions.createClient({ newClient: client }))
-      this.store.dispatch(uiActions.setModal())
+      this.closeModal()
     })
   }
 
   edit() {
-    console.log(this.clientForm.value)
+    this.clientService.editClient(this.currentClient._id, this.clientForm.value).subscribe((clientDb) => {
+      this.store.dispatch(clientActions.editClient({ editClient: clientDb }))
+      this.closeModal()
+    })
   }
 
   closeModal() {

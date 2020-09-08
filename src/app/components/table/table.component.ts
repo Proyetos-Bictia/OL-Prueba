@@ -10,6 +10,7 @@ import { Client } from 'src/app/models/client.model';
 export class TableComponent implements OnInit {
 
   @Input() clients: Client[] = []
+  @Input() search: Partial<Client>
   @Output() clientOutput: EventEmitter<Client> = new EventEmitter();
 
   constructor() { }

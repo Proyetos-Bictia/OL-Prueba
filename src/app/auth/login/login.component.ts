@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-// let Swal = require('sweetalert2')
+import { Router } from '@angular/router';
+import Swal from "sweetalert2";
 
 //NgRx
 import { Store } from '@ngrx/store';
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
     private store: Store<AppState>,
-    private userService: UserService) { }
+    private userService: UserService,
+    private router: Router) { }
 
   ngOnInit() {
     this.formBuilder()
@@ -41,8 +43,13 @@ export class LoginComponent implements OnInit {
         this.store.dispatch(ui.setLoading())
         this.store.dispatch(auth.setUser({ user: data }))
         localStorage.setItem('userOL', JSON.stringify(data))
+        this.router.navigate(['/home'])
       }, err => {
-        // Swal.fire('Error', err.error.error, 'error')
+        Swal({
+          title: 'Error', 
+          text: err.error.error, 
+          type: 'error'
+        })
         this.store.dispatch(ui.setLoading())
       })
     }, 1000);

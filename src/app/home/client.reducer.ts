@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { setClients, createClient, unSetClientSelected, setClientSelected } from './client.action';
+import { setClients, createClient, unSetClientSelected, setClientSelected, editClient } from './client.action';
 
 import { Client } from '../models/client.model';
 
@@ -17,6 +17,16 @@ const _clientsReducer = createReducer(
     initialState,
     on(setClients, (state, { clients }) => ({ ...state, clients: [...clients] })),
     on(createClient, (state, { newClient }) => ({ ...state, clients: [...state.clients, newClient] })),
+    on(editClient, (state, { editClient }) => ({
+        ...state, clients: state.clients.map((client) => {
+            if (editClient._id === client._id) {
+                return editClient
+            } else {
+                return client
+            }
+        })
+    })),
+
     on(unSetClientSelected, (state) => ({ ...state, clientSelected: null })),
     on(setClientSelected, (state, { clientToSet }) => ({ ...state, clientSelected: { ...clientToSet } })),
 );

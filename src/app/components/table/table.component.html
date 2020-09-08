@@ -13,18 +13,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let client of clients">
-        <td class="info">{{client.name}}</td>
-        <td class="info">{{client.lastName}}</td>
+      <tr *ngFor="let client of clients | filterActual: search">
+        <td class="info">{{client.name | titlecase}}</td>
+        <td class="info">{{client.lastName |titlecase}}</td>
         <td class="info">{{client.document}}</td>
         <td class="info">{{client.rol}}</td>
         <td class="info">{{client.state ? 'Activo' : 'Inactivo'}}</td>
         <td class="info">{{client.phone}}</td>
         <td class="info">{{client.email}}</td>
         <td class="info">
-          <div
-            class="selector"
-            (click)="editClient(client)"  
+          <div 
+            class="selector" 
+            (click)="editClient(client)"
           >
             <i class="fas fa-pen"></i>
           </div>

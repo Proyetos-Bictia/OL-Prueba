@@ -17,15 +17,18 @@ import { Client } from 'src/app/models/client.model';
 export class UsersComponent implements OnInit, OnDestroy {
 
   clients: Client[] = []
+  search: Client = null
   isDeploy: boolean = true
   subscriptionDeploy: Subscription
+
 
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-    this.subscriptionDeploy = this.store.subscribe(({ ui, clients }) => {
+    this.subscriptionDeploy = this.store.subscribe(({ ui, clients, search }) => {
       this.isDeploy = ui.sideBar
       this.clients = clients.clients
+      this.search = search.client
     })
   }
 

@@ -21,12 +21,18 @@
         <td class="info">{{client.state ? 'Activo' : 'Inactivo'}}</td>
         <td class="info">{{client.phone}}</td>
         <td class="info">{{client.email}}</td>
-        <td class="info">
+        <td class="info container-actions">
           <div 
             class="selector" 
             (click)="editClient(client)"
           >
-            <i class="fas fa-pen"></i>
+            <i class="fas fa-pen" style="color: #2343ad;"></i>
+          </div>
+          <div 
+            class="selector" 
+            (click)="deleteClient(client._id)"
+          >
+            <i class="fas fa-trash"></i>
           </div>
         </td>
       </tr>

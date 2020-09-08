@@ -36,4 +36,11 @@ export class ClientService {
     )
   }
 
+  deleteClient(id) {
+    const url = `${this.baseUrl}/data/${id}`
+    return this.http.delete(url).pipe(
+      map((resp: any) => resp.message)
+    )
+  }
+
 }

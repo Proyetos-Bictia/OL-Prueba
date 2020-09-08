@@ -17,6 +17,11 @@ export const editClient = createAction(
     props<{ editClient: Client }>()
 );
 
+export const deleteClient = createAction(
+    '[Clients] Delete Clients',
+    props<{ deleteClient: string }>()
+);
+
 export const unSetClientSelected = createAction('[Clients] UnSet Client Selected');
 
 export const setClientSelected = createAction(

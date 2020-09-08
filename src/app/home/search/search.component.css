@@ -39,6 +39,40 @@ select {
     overflow-y: auto;
 }
 
+
+.container-form::-webkit-scrollbar {
+    width: 8px; 
+    height: 8px; 
+    display: block; 
+}
+
+.container-form::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.container-form::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.container-form::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+.container-form::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 4px;
+    display: none;
+}
+
+.container-form::-webkit-scrollbar-track:hover,
+.container-form::-webkit-scrollbar-track:active {
+    display: block;
+    background: #d4d4d4;
+}
+
+
 .container-buttons {
     width: 85%;
     display: flex;

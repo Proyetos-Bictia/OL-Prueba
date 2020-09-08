@@ -12,6 +12,7 @@ export class TableComponent implements OnInit {
   @Input() clients: Client[] = []
   @Input() search: Partial<Client>
   @Output() clientOutput: EventEmitter<Client> = new EventEmitter();
+  @Output() deleteClientOutput: EventEmitter<Client> = new EventEmitter();
 
   constructor() { }
 
@@ -20,6 +21,10 @@ export class TableComponent implements OnInit {
 
   editClient(client: Client) {
     this.clientOutput.emit(client)
+  }
+
+  deleteClient(id) {
+    this.deleteClientOutput.emit(id);
   }
 
 }

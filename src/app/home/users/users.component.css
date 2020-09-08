@@ -25,7 +25,7 @@
     color: #2343ad;
 }
 
-.container-top_left i{
+.container-top_left i {
     font-size: 20px;
     color: #2343ad;
 }
@@ -46,11 +46,44 @@ h3 {
 
 .container-table {
     margin-top: 20px;
-    width: calc(100vw - 300px - 280px - 95px );
-    height: 85%;
+    width: calc(100vw - 300px - 280px - 95px);
+    max-height: calc(100vh - 230px);
     overflow-x: auto;
 }
 
+.container-table::-webkit-scrollbar {
+    width: 8px; 
+    height: 8px; 
+    display: block; 
+}
+
+.container-table::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.container-table::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.container-table::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+.container-table::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 4px;
+    display: none;
+}
+
+.container-table::-webkit-scrollbar-track:hover,
+.container-table::-webkit-scrollbar-track:active {
+    display: block;
+    background: #d4d4d4;
+}
+
 .hiddenSideBar {
-    width: calc(100vw - 100px - 280px - 95px );
+    width: calc(100vw - 100px - 280px - 95px);
+    height: calc(100vh - 230px);
 }

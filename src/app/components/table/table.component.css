@@ -1,0 +1,10 @@
+.title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.info {
+    font-size: 12px;
+    font-weight: lighter;
+    color: gray;
+}

@@ -3,7 +3,7 @@
     height: 100%;
     padding: 0px;
     display: grid;
-    grid-template-columns: auto 280px;
+    grid-template-columns: auto 300px;
     grid-gap: 10px;
 }
 

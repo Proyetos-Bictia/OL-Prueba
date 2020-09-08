@@ -1,7 +1,98 @@
 <div class="container-fluid">
   <div class="card">
     <div class="card-body">
-      <h3>Hi soy search</h3>
+      <div class="container-top">
+        <i class="fas fa-users"></i>
+        <h3 class="ml-4">Filtrar búsqueda</h3>
+      </div>
+      <div class="container-form">
+        <form
+          [formGroup]="searchForm"
+        >
+          <div class="form-group mt-3">
+            <label for="name">Nombres</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="name" 
+              autocomplete="off"
+              formControlName="name"
+            >
+          </div>
+  
+          <div class="form-group mt-3">
+            <label for="lastName">Apellidos</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="lastName" 
+              autocomplete="off"
+              formControlName="lastName"
+            >
+          </div>
+  
+          <div class="form-group mt-3">
+            <label for="document">Identificación (C.C.)</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="document" 
+              autocomplete="off"
+              formControlName="document"
+            >
+          </div>
+  
+          <div class="form-group mt-3">
+            <label for="rol">Rol asociado</label>
+            <select 
+              class="form-control" 
+              id="rol"
+              formControlName="rol"
+            >
+              <option selected disabled></option>
+              <option value="administrador">Administrador</option>
+              <option value="conductor">Conductor</option>
+              <option value="recolector">Recolector</option>
+            </select>
+          </div>
+  
+          <div class="form-group mt-3">
+            <label for="state">Estado</label>
+            <select 
+              class="form-control" 
+              id="state"
+              formControlName="state"
+            >
+              <option selected disabled></option>
+              <option value="true">Activo</option>
+              <option value="false">Inactivo</option>
+            </select>
+          </div>
+  
+          <div class="form-group mt-3">
+            <label for="email">Correo electrónico</label>
+            <input 
+              type="email" 
+              class="form-control" 
+              id="email" 
+              autocomplete="off"
+              formControlName="email"
+            >
+          </div>
+        </form>
+      </div>
+      <div class="container-buttons mt-3">
+        <button 
+          class="btn btn-primary btn-primary-app"
+          (click)="filtrar()"  
+        >
+          Filtrar
+        </button>
+  
+        <button class="btn btn-outline-primary btn-primary-outline-app">
+          Limpiar
+        </button>
+      </div>
     </div>
   </div>
 </div>

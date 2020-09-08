@@ -6,6 +6,10 @@ html {
     font-family: "Roboto", sans-serif;
 }
 
+label {
+    margin: 0;
+}
+
 p {
     font-size: 14px;
     color: white;
@@ -31,4 +35,22 @@ h3,
 h4,
 h5 {
     margin: 0;
+}
+
+.btn-primary-app {
+    padding: 5px 20px !important;
+    background: linear-gradient(90deg, #89c045, #659d22) !important;
+    border: none !important;
+}
+
+.btn-primary-outline-app {
+    padding: 5px 20px !important;
+    border: 1px solid #659d22;
+    color: #89c045;
+}
+
+.btn-primary-outline-app:hover {
+    background-color: #89c045 !important;
+    color: white;
+    border: 1px solid #659d22;
 }

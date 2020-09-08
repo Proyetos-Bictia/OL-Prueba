@@ -3,5 +3,47 @@
 }
 
 .card {
-    height: 100%;
+    max-height: 550px;
+    min-height: 488px;
+    position: relative;
+}
+
+.container-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container-top i {
+    font-size: 20px;
+    color: #2343ad;
+}
+
+h3 {
+    font-size: 18px;
+    color: #2343ad;
+}
+
+label {
+    font-size: 14px;
+    color: gray;
+}
+
+input,
+select {
+    height: 30px;
+}
+
+.container-form {
+    height: calc(100vh - 250px);
+    overflow-y: auto;
+}
+
+.container-buttons {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
 }

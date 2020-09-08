@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { LayoutComponent } from './layout/layout.component';
 import { UsersComponent } from './users/users.component';
 import { SearchComponent } from './search/search.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [HomeComponent, LayoutComponent, UsersComponent, SearchComponent],
@@ -16,7 +17,8 @@ import { SearchComponent } from './search/search.component';
     CommonModule,
     HomeRoutingModule,
     SharedModule,
-    ComponentsModule
+    ComponentsModule,
+    ReactiveFormsModule,
   ]
 })
 export class HomeModule { }

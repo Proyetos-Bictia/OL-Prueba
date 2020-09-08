@@ -13,26 +13,22 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="info">Camilo Hernnado</td>
-        <td class="info">Dvila Bonilla</td>
-        <td class="info">1049643462</td>
-        <td class="info">Administrador</td>
-        <td class="info">Activo</td>
-        <td class="info">3214314628</td>
-        <td class="info">camilo7davila@gmail.com</td>
-        <td class="info">Acciones</td>
-      </tr>
-
-      <tr>
-        <td class="info">Camilo Hernnado</td>
-        <td class="info">Dvila Bonilla</td>
-        <td class="info">1049643462</td>
-        <td class="info">Administrador</td>
-        <td class="info">Activo</td>
-        <td class="info">3214314628</td>
-        <td class="info">camilo7davila@gmail.com</td>
-        <td class="info">Acciones</td>
+      <tr *ngFor="let client of clients">
+        <td class="info">{{client.name}}</td>
+        <td class="info">{{client.lastName}}</td>
+        <td class="info">{{client.document}}</td>
+        <td class="info">{{client.rol}}</td>
+        <td class="info">{{client.state ? 'Activo' : 'Inactivo'}}</td>
+        <td class="info">{{client.phone}}</td>
+        <td class="info">{{client.email}}</td>
+        <td class="info">
+          <div
+            class="selector"
+            (click)="editClient(client)"  
+          >
+            <i class="fas fa-pen"></i>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>

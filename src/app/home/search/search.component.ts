@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //NGRx
 import { Store } from '@ngrx/store';
-import { setSearch } from '../search.action';
+import * as searchAction from '../search.action'
 
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { AppState } from 'src/app/app.reducer';
@@ -35,8 +35,13 @@ export class SearchComponent implements OnInit {
   }
 
   filtrar() {
-    this.store.dispatch(setSearch({ client: this.searchForm.value }))
+    this.store.dispatch(searchAction.setSearch({ client: this.searchForm.value }))
     console.log(this.searchForm.value)
+  }
+
+  resetForm() {
+    this.searchForm.reset();
+    this.store.dispatch(searchAction.clearSearch())
   }
 
 }

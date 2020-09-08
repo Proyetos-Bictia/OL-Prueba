@@ -6,6 +6,7 @@ export class Client {
         public rol: 'administrador' | 'conductor' | 'recolector',
         public state: boolean,
         public email: string,
+        public phone: string,
         public _id?: string
     ) { }
 }

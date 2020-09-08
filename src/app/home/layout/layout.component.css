@@ -11,6 +11,7 @@
     grid-template-columns: 300px calc(100vw - 300px);
     grid-template-rows: 10% 83% 7%;
     transition: width 1s;
+    position: relative;
 }
 
 .lessSideBar {

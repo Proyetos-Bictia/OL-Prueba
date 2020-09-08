@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-let Swal = require('sweetalert2')
+// let Swal = require('sweetalert2')
 
 //NgRx
 import { Store } from '@ngrx/store';
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         this.store.dispatch(auth.setUser({ user: data }))
         localStorage.setItem('userOL', JSON.stringify(data))
       }, err => {
-        Swal.fire('Error', err.error.error, 'error')
+        // Swal.fire('Error', err.error.error, 'error')
         this.store.dispatch(ui.setLoading())
       })
     }, 1000);

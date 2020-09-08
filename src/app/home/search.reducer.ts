@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { setSearch } from './search.action';
+import { setSearch, clearSearch } from './search.action';
 
 import { Client } from '../models/client.model';
 
@@ -14,6 +14,7 @@ export const initialState = {
 const _searchReducer = createReducer(
     initialState,
     on(setSearch, (state, { client }) => ({ ...state, client: { ...client } })),
+    on(clearSearch, (state) => ({ ...state, client: null })),
 );
 
 export function searchReducer(state, action) {

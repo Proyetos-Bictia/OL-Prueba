@@ -10,9 +10,10 @@ import { LayoutComponent } from './layout/layout.component';
 import { UsersComponent } from './users/users.component';
 import { SearchComponent } from './search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
-  declarations: [HomeComponent, LayoutComponent, UsersComponent, SearchComponent],
+  declarations: [HomeComponent, LayoutComponent, UsersComponent, SearchComponent, ModalComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

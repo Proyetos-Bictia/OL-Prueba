@@ -1,0 +1,176 @@
+<div class="container-fluid">
+    <div class="container-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="title">
+                    <h3>Agregar nuevo usario</h3>
+                    <div
+                        class="selector"
+                        (click)="closeModal()"
+                    >
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <form
+                    [formGroup]="clientForm"
+                    class="container-form"
+                >
+                        <div class="form-group mt-3">
+                            <div class="row">
+                                <div class="col">
+                                    <div>
+                                        <label for="name">Nombres</label>
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="name" 
+                                            autocomplete="off"
+                                            formControlName="name"
+                                            [class.is-invalid]="placeName.errors && placeName.dirty"
+                                            [class.is-valid]="!placeName.errors && placeName.dirty"
+                                        >
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div>
+                                        <label for="lastName">Apellidos</label>
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="lastName" 
+                                            autocomplete="off"
+                                            formControlName="lastName"
+                                            [class.is-invalid]="placeLastName.errors && placeLastName.dirty"
+                                            [class.is-valid]="!placeLastName.errors && placeLastName.dirty"
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="form-group mt-3">
+                            <div class="row">
+                                <div class="col">
+                                    <div>
+                                        <label for="document">Identificación (C.C.)</label>
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="document" 
+                                            autocomplete="off"
+                                            formControlName="document"
+                                            [class.is-invalid]="placeDocument.errors && placeDocument.dirty"
+                                            [class.is-valid]="!placeDocument.errors && placeDocument.dirty"
+                                        >
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div>
+                                        <label for="rol">Rol asociado</label>
+                                        <select 
+                                            class="form-control" 
+                                            id="rol"
+                                            formControlName="rol"
+                                            [class.is-invalid]="placeRol.errors && placeRol.dirty"
+                                            [class.is-valid]="!placeRol.errors && placeRol.dirty"
+                                        >
+                                            <option selected disabled></option>
+                                            <option value="administrador">Administrador</option>
+                                            <option value="conductor">Conductor</option>
+                                            <option value="recolector">Recolector</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="form-group mt-3">
+                            <div class="row">
+                                <div class="col">
+                                    <div>
+                                        <label for="state">Estado</label>
+                                        <select 
+                                            class="form-control" 
+                                            id="state"
+                                            formControlName="state"
+                                            [class.is-invalid]="placeState.errors && placeState.dirty"
+                                            [class.is-valid]="!placeState.errors && placeState.dirty"
+                                        >
+                                            <option selected disabled></option>
+                                            <option [ngValue]="true">Activo</option>
+                                            <option [ngValue]="false">Inactivo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div>
+                                        <label for="password">Contraseña</label>
+                                        <input
+                                            type="text" 
+                                            class="form-control" 
+                                            id="password" 
+                                            autocomplete="off"
+                                            formControlName="password"
+                                            [class.is-invalid]="placePassword.errors && placePassword.dirty"
+                                            [class.is-valid]="!placePassword.errors && placePassword.dirty"
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="form-group mt-3">
+                            <div class="row">
+                                <div class="col">
+                                    <div>
+                                        <label for="phone">Telefono</label>
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="phone" 
+                                            autocomplete="off"
+                                            formControlName="phone"
+                                            [class.is-invalid]="placePhone.errors && placePhone.dirty"
+                                            [class.is-valid]="!placePhone.errors && placePhone.dirty"
+                                        >
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div>
+                                        <label for="email">Correo electrónico</label>
+                                        <input
+                                            type="text" 
+                                            class="form-control" 
+                                            id="email" 
+                                            autocomplete="off"
+                                            formControlName="email"
+                                            [class.is-invalid]="placeEmail.errors && placeEmail.dirty"
+                                            [class.is-valid]="!placeEmail.errors && placeEmail.dirty"
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="container-buttons mt-3">
+                        <button 
+                            class="btn btn-primary btn-primary-app"
+                            type="button"
+                            [disabled]="clientForm.invalid"
+                            (click)="isThereClient ? edit() : save() "
+                        >
+                            {{isThereClient ? 'Editar' : 'Guardar'}}
+                        </button>
+
+                        <button 
+                            class="btn btn-outline-primary btn-primary-outline-app"
+                            type="button" 
+                        >
+                            Limpiar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

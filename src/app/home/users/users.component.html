@@ -10,7 +10,10 @@
             <h3 class="ml-4">Usuarios exitentes</h3>
           </div>
           <div class="container-top_right">
-            <button class="btn btn-primary">
+            <button 
+              class="btn btn-primary"
+              (click)="openModal()"
+            >
               Crear
             </button>
           </div>
@@ -20,7 +23,10 @@
           class="container-table"
           [class.hiddenSideBar]="!isDeploy"  
         >
-        <app-table></app-table>
+        <app-table
+          [clients]="clients"
+          (clientOutput)="editClient($event)"
+        ></app-table>
         </div>
       </div>
     </div>

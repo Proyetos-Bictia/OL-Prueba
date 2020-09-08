@@ -64,8 +64,8 @@
               formControlName="state"
             >
               <option selected disabled></option>
-              <option value="true">Activo</option>
-              <option value="false">Inactivo</option>
+              <option [ngValue]="true">Activo</option>
+              <option [ngValue]="false">Inactivo</option>
             </select>
           </div>
   
@@ -84,12 +84,17 @@
       <div class="container-buttons mt-3">
         <button 
           class="btn btn-primary btn-primary-app"
-          (click)="filtrar()"  
+          (click)="filtrar()" 
+          type="button" 
         >
           Filtrar
         </button>
   
-        <button class="btn btn-outline-primary btn-primary-outline-app">
+        <button 
+          class="btn btn-outline-primary btn-primary-outline-app"
+          type="button" 
+          (click)="resetForm()"
+        >
           Limpiar
         </button>
       </div>

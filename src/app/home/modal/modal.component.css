@@ -1,0 +1,61 @@
+.container-fluid {
+    padding: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-card {
+    width: 600px;
+    height: 400px;
+}
+
+.card {
+    border-radius: 20px !important;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+label {
+    font-size: 14px;
+    color: gray;
+}
+
+input,
+select {
+    height: 30px;
+}
+
+input {
+    font-size: 14px;
+}
+
+h3 {
+    color: black;
+    font-size: 18px;
+}
+
+.container-buttons {
+    margin: 0 auto;
+    max-width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container-form {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+i {
+    color: red;
+}

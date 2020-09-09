@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from "./shared/shared.module";
+import { CoreModule } from './core/core.module';
+import { RouterModule } from '@angular/router';
 
 // NgRx
 import { StoreModule } from '@ngrx/store';
@@ -22,6 +24,7 @@ import { AppComponent } from "./app.component";
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    CoreModule,
     StoreModule.forRoot(appReducer),
     HttpClientModule,
     StoreDevtoolsModule.instrument({

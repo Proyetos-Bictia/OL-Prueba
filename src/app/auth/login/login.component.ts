@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
         this.store.dispatch(ui.setLoading())
         this.store.dispatch(auth.setUser({ user: data }))
         localStorage.setItem('userOL', JSON.stringify(data))
-        this.router.navigate(['/home'])
+        this.router.navigate(['/dashboard/users'])
       }, err => {
         Swal({
           title: 'Error', 

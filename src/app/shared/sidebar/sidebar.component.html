@@ -11,15 +11,17 @@
     class="container-item selector mb-3"
     *ngFor="let item of metaData"
     [class.centrar]="!isDeploy"
+    [routerLink]="['/dashboard', item.component]" 
+    routerLinkActive="active-sidebar" 
   >
-      <div style="width: 30px; text-align: center;">
-        <i [class]="item.icono"></i>
-      </div>
-      <p 
-        *ngIf="isDeploy"
-        class="pl-4"  
-      >
-          {{item.titulo}}
-      </p>
+    <div style="width: fit-content; text-align: center">
+      <i [class]="item.icono"></i>
+    </div>
+    <p 
+      *ngIf="isDeploy"
+      class="pl-4"  
+    >
+        {{item.titulo}}
+    </p>
   </div>
 </div>

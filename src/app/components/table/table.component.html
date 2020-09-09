@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let client of clients | filterActual: search">
+      <tr *ngFor="let client of clients | filterClients: search">
         <td class="info">{{client.name | titlecase}}</td>
         <td class="info">{{client.lastName |titlecase}}</td>
         <td class="info">{{client.document}}</td>

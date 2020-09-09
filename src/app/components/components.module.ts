@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableComponent } from './table/table.component';
-import { FilterActualPipe } from './filter-actual.pipe';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
-  declarations: [TableComponent, FilterActualPipe],
+  declarations: [TableComponent],
   exports: [TableComponent],
   imports: [
     CommonModule,
+    CoreModule,
   ]
 })
 export class ComponentsModule { }

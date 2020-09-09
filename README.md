@@ -9,4 +9,4 @@ Correr `ng serve` y abriren el la direccion 'http://localhost:4200/',
 
 ## Uso de la aplicación
 
-El unico usuario de pruebas creado es olsoftware@gmail.com y la contraseña es prueba123456
+El unico usuario de pruebas creado es prueba@gmail.com y la contraseña es 123456

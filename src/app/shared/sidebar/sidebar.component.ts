@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { SidebarService } from 'src/app/core/services/sidebar.service';
 

@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducer';
 import * as ui from '../ui.actions'
 import * as auth from '../../auth/auth.actions'
+import * as search from '../../home/search.action'
 
 @Component({
   selector: 'app-navbar',
@@ -21,6 +22,7 @@ export class NavbarComponent {
   }
 
   logout() {
+    this.store.dispatch(search.clearSearch())
     this.store.dispatch(auth.unSetUser())
     localStorage.removeItem('userOL')
     this.router.navigate(['/auth'])

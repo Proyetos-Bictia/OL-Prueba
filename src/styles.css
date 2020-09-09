@@ -21,20 +21,20 @@ i {
     font-size: 14px;
 }
 
-.container-main {
-    width: 100%;
-}
-
-.selector {
-    cursor: pointer;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5 {
     margin: 0;
+}
+
+button {
+    outline: none;
+}
+
+button:focus {
+    outline: none;
 }
 
 .btn-primary-app {
@@ -61,6 +61,14 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0;
 }
 
+.container-main {
+    width: 100%;
+}
+
+.selector {
+    cursor: pointer;
+}
+
 .active-sidebar {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px !important;
@@ -68,14 +76,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .active-sidebar:focus{
-    outline: none;
-}
-
-button {
-    outline: none;
-}
-
-button:focus {
     outline: none;
 }
 

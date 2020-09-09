@@ -14,6 +14,8 @@ export class TableComponent implements OnInit {
   @Output() clientOutput: EventEmitter<Client> = new EventEmitter();
   @Output() deleteClientOutput: EventEmitter<Client> = new EventEmitter();
 
+  clientsAlgo: any[] = ['', '', '', '']
+
   constructor() { }
 
   ngOnInit() {

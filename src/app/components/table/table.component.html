@@ -13,29 +13,45 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let client of clients | filterClients: search">
-        <td class="info">{{client.name | titlecase}}</td>
-        <td class="info">{{client.lastName |titlecase}}</td>
-        <td class="info">{{client.document}}</td>
-        <td class="info">{{client.rol}}</td>
-        <td class="info">{{client.state ? 'Activo' : 'Inactivo'}}</td>
-        <td class="info">{{client.phone}}</td>
-        <td class="info">{{client.email}}</td>
-        <td class="info container-actions">
-          <div 
-            class="selector" 
-            (click)="editClient(client)"
-          >
-            <i class="fas fa-pen" style="color: #2343ad;"></i>
-          </div>
-          <div 
-            class="selector" 
-            (click)="deleteClient(client._id)"
-          >
-            <i class="fas fa-trash"></i>
-          </div>
-        </td>
-      </tr>
+      <ng-container *ngIf="clients.length !== 0; else loading">
+        <tr *ngFor="let client of clients | filterClients: search">
+              <td class="info">{{client.name | titlecase}}</td>
+              <td class="info">{{client.lastName |titlecase}}</td>
+              <td class="info">{{client.document}}</td>
+              <td class="info">{{client.rol}}</td>
+              <td class="info">{{client.state ? 'Activo' : 'Inactivo'}}</td>
+              <td class="info">{{client.phone}}</td>
+              <td class="info">{{client.email}}</td>
+              <td class="info container-actions">
+                <div 
+                  class="selector" 
+                  (click)="editClient(client)"
+                >
+                  <i class="fas fa-pen" style="color: #2343ad;"></i>
+                </div>
+                <div 
+                  class="selector" 
+                  (click)="deleteClient(client._id)"
+                >
+                  <i class="fas fa-trash"></i>
+                </div>
+              </td>
+        </tr>
+      </ng-container>
+      
+      <ng-template #loading>
+        <tr *ngFor="let item of clientsAlgo">
+          <td class="info"><ngx-skeleton-loader [theme]="{height: '14px', margin: '0'}" ></ngx-skeleton-loader></td>
+          <td class="info"><ngx-skeleton-loader [theme]="{height: '14px', margin: '0'}"></ngx-skeleton-loader></td>
+          <td class="info"><ngx-skeleton-loader [theme]="{height: '14px', margin: '0'}"></ngx-skeleton-loader></td>
+          <td class="info"><ngx-skeleton-loader [theme]="{height: '14px', margin: '0'}"></ngx-skeleton-loader></td>
+          <td class="info"><ngx-skeleton-loader [theme]="{height: '14px', margin: '0'}"></ngx-skeleton-loader></td>
+          <td class="info"><ngx-skeleton-loader [theme]="{height: '14px', margin: '0'}"></ngx-skeleton-loader></td>
+          <td class="info"><ngx-skeleton-loader [theme]="{height: '14px', margin: '0'}"></ngx-skeleton-loader></td>
+          <td class="info"><ngx-skeleton-loader [theme]="{height: '14px', margin: '0'}"></ngx-skeleton-loader></td>
+        </tr>
+      </ng-template>
+      
     </tbody>
   </table>
 </div>

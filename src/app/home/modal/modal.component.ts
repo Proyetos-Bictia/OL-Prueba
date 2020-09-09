@@ -72,6 +72,10 @@ export class ModalComponent implements OnInit, OnDestroy {
     })
   }
 
+  reset() {
+    this.clientForm.reset()
+  }
+
   closeModal() {
     this.store.dispatch(uiActions.setModal())
   }

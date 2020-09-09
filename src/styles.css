@@ -78,3 +78,9 @@ button {
 button:focus {
     outline: none;
 }
+
+.form-control:focus {
+    border-color: #ced4da;
+    box-shadow: none;
+    outline: 0 none;
+}
